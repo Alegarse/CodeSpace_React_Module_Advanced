@@ -10,8 +10,8 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<MainLayout/>}>
-        <Route path="/" element={<ListUsers/>}></Route>
-        <Route path="/details/:userId" element={<DetailsUUser/>}></Route>
+        <Route index element={<ListUsers/>}/>
+        <Route path="/details/:userId" element={<DetailsUUser/>}/>
       </Route>
     </Routes>
     </BrowserRouter>
