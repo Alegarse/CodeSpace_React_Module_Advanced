@@ -37,7 +37,7 @@ const ContadorComponent = () => {
   };
 
   const lanzarMultx2 = () => {
-    dispatch(multiplyCount(count * 2 === 0 ? 1 : count * 2))
+    dispatch(multiplyCount(count === 0 ? 1 : count * 2))
   }
 
   const lanzarCambioDeNombre = () => {
