@@ -12,7 +12,7 @@ const MobileComponent = () => {
 
   const load = () => {
     const aux = getAllMobiles();
-    dispatch(loadMobiles(aux));
+    dispatch(loadMobiles({mobiles:aux}));
   };
 
   const selectMobileHandler = (mobile) => {

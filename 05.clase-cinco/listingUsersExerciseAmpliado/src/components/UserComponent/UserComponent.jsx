@@ -9,10 +9,11 @@ const UserComponent = () => {
   const { users, userSelected } = useSelector(
     (state) => state.userComponentReducer
   );
+  const mobiles = useSelector((state) => state.mobilesComponentReducer.mobiles);
 
   const load = () => {
     const aux = getAllUsers();
-    dispatch(loadUsers(aux));
+    dispatch(loadUsers({ users: aux }));
   };
 
   const selectUserHandler = (user) => {
@@ -21,6 +22,15 @@ const UserComponent = () => {
 
   const resetUserSelected = () => {
     dispatch(selectUser(undefined));
+  };
+
+  const getMobileNameById = (idMobile) => {
+    const aux = mobiles.find((m) => m.id === idMobile);
+    if (aux) {
+      return `tiene el movil ${aux.brand} ${aux.model}`;
+    } else {
+      return 'no dispone de movil';
+    }
   };
 
   useEffect(() => {
@@ -76,8 +86,7 @@ const UserComponent = () => {
           }}
         >
           <span>
-            El usuario {userSelected.username} tiene el movil{' '}
-            {userSelected.mobile}
+            El usuario {userSelected.username} {getMobileNameById(userSelected.mobile)}
           </span>
           <button onClick={resetUserSelected}>Clear selected</button>
         </div>

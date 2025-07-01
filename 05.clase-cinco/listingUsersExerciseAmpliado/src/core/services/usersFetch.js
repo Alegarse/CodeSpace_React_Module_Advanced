@@ -11,6 +11,17 @@ const users = [
     password: '67890',
     mobile: 1,
   },
+  {
+    id: 3,
+    username: 'UserName 3',
+    password: '12345'
+  },
+  {
+    id: 4,
+    username: 'UserName 4',
+    password: '67890',
+    mobile: 1,
+  }
 ];
 
 export const getAllUsers = () => {

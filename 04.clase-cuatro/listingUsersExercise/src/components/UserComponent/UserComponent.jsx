@@ -12,7 +12,7 @@ const UserComponent = () => {
 
   const load = () => {
     const aux = getAllUsers();
-    dispatch(loadUsers(aux));
+    dispatch(loadUsers({ users: aux}));
   };
 
   const selectUserHandler = (user) => {
