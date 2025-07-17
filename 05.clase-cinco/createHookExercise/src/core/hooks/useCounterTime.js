@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useState } from 'react';
 
 const useCounterTime = (initialValue = 0) => {
@@ -23,6 +23,15 @@ const useCounterTime = (initialValue = 0) => {
       );
     }
   };
+
+  useEffect(() => {
+      if (!refInterval.current) {
+      refInterval.current = setInterval(
+        () => setCounter((counter) => counter + 1),
+        1000
+      );
+    }
+    }, []);
 
   const resetCounter = () => {
     setCounter(0);

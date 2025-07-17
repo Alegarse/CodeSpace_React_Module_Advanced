@@ -1,14 +1,9 @@
-import { useEffect } from 'react';
 import './App.css';
 import useCounterTime from './core/hooks/useCounterTime';
 
 function App() {
-  const { counter, mode, initCounter, pauseCounter, resetCounter, reanudateCounter } =
+  const { counter, mode, pauseCounter, resetCounter, reanudateCounter } =
     useCounterTime();
-
-  useEffect(() => {
-    initCounter();
-  }, []);
 
   return (
     <div className="container">
